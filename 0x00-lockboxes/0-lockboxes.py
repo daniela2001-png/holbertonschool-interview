@@ -24,8 +24,10 @@ def canUnlockAll(boxes):
         # el indice de la caja que tengo llave y no ha sido abierta
         caja_actual = (numero_keys - numero_cajas_visitadas).pop()
         numero_cajas_visitadas.add(caja_actual)
-        if caja_actual <= len(boxes):  # sino pasa el checker tavo es el responsable
+        try:
             numero_keys.update(boxes[caja_actual])
+        except:
+            continue
     if len(numero_cajas - numero_cajas_visitadas) == 0:
         return True
     else:
