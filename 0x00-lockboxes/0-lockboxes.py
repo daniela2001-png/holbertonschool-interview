@@ -27,7 +27,7 @@ def canUnlockAll(boxes):
         try:
             numero_keys.update(boxes[caja_actual])
         except:
-            continue
+            pass
     if len(numero_cajas - numero_cajas_visitadas) == 0:
         return True
     else:
